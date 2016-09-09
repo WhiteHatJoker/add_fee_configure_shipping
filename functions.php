@@ -12,6 +12,7 @@ function wc_ninja_manipulate_shipping( $rates, $package ) {
         $tonewood_check = false;
         $tsar_products_total = 0;
         $tsar_check = false;
+        //Add new product or vendor total and check boolean here
   	$adj_cart_subtotal = 0;
         $new_std_rate = 0;
         $new_day_rate = 0;
@@ -20,6 +21,7 @@ function wc_ninja_manipulate_shipping( $rates, $package ) {
 
   	// Loop through each product in the cart
   	foreach ( $cart_products as $product ) {
+  		//create new conditionals for new vendors or producst in cart
   		if ( $product['product_id'] =='29543' ) {
   			// If product ID 29543 is in cart or if Tonewood in cart remember its line total and turn tonewood_check true
 			$tonewood_products_cost = $product['line_total'];
@@ -32,7 +34,9 @@ function wc_ninja_manipulate_shipping( $rates, $package ) {
                 	$tsar_check = true;
   		}
   	}
+  	//update the line 38 with boolean for new product or vendor
   	if ($tsar_check || $tonewood_check) {
+  		//update the line below with totals variable for new product or vendor
   		$adj_cart_subtotal = WC()->cart->subtotal - $tonewood_products_cost - $tsar_products_total;
   		if ($adj_cart_subtotal>=1 && $adj_cart_subtotal<=24) {
                 	$new_std_rate=7.5;
@@ -114,6 +118,7 @@ function woocommerce_custom_surcharge() {
         return;
 
     foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) {
+    	//add the check for a new product or vendors here
         if ($values['data']->id == 29543) {
             $tonewoodfee= true;
         }
@@ -130,5 +135,6 @@ function woocommerce_custom_surcharge() {
     if ($tonewoodfee) {
         $woocommerce->cart->add_fee( 'Tonewood Shipping Fee', $fixed, true, '' );
     }
+    //add new conditional for new products in the cart as above
 }
 ?>
