@@ -65,7 +65,7 @@ function wc_ninja_manipulate_shipping( $rates, $package ) {
                 	$new_over_rate=0.3*$adj_cart_subtotal;
             		
             	}
-            	
+            	//Update with your own shipping method ids
             	if (isset($rates['table_rate-9 : 23'])) {
                 	$rates['table_rate-9 : 23']->cost = $new_over_rate;
             	} elseif (isset($rates['table_rate-9 : 22'])) {
