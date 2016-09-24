@@ -12,7 +12,7 @@ Keep in mind: I am using the Table Rate Shipping plugin as well as my shipping c
 5. Change code on [lines 68-101](functions.php#L68-L101) based on the IDs you have for shipping methods (mine is set as such by Table Rate Shipping plugin).
 6. Again update [line 125](functions.php#L125) with your own product ID.
 7. Finally, on [line 136](functions.php#L136) update `'Tonewood Shipping Fee', $fixed` with `'Your preffered naming', fee amount`.
-6. Now you can remove unnecessary lines of code lines 15,16, 33-37, 116, 129-131, 135-137.
+6. Now you can remove unnecessary lines of code [lines 15-16](functions.php#L15-L16), [33-37](functions.php#L33-L37), [116](functions.php#L116), [129-131](functions.php#L129-L131), [135-137](functions.php#L135-L137).
 
 
 # Installation for products from one vendor
@@ -23,4 +23,4 @@ Keep in mind: I am using the Table Rate Shipping plugin as well as my shipping c
 5. Change code on [lines 68-101](functions.php#L68-L101) based on the IDs you have for shipping methods (mine is set as such by Table Rate Shipping plugin).
 6. Again update [line 129](functions.php#L129) with your own vendor ID.
 7. Finally, on [line 139](functions.php#L139) update `'Tsar Nicoulai Shipping Fee', $fixed` with `'Your preffered naming', fee amount`.
-8. Now you can remove unnecessary lines of code lines 13, 14, 27-31, 115, 125-127, 138-140.
+8. Now you can remove unnecessary lines of code [lines 13, 14] (functions.php#L13-L14), [27-31] (functions.php#L27-L31), [115](functions.php#L115), [125-127](functions.php#L125-L127), [138-140](functions.php#L138-L140).
